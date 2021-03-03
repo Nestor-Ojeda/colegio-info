@@ -1,7 +1,7 @@
 from django.db import models
 from depto.models import Depto
 from domicilio.models import Direccion
-from contactos.models import Contactos
+from contactos.models import Contacto
 from personas.models import Persona
 # Create your models here.
 
@@ -9,7 +9,7 @@ class Personal(models.Model):
 	persona = models.ForeignKey(Persona, on_delete=models.SET_NULL,
         null=True, related_name="pers")
 	nacimiento = models.DateField()
-	telefono = models.ForeignKey(Contactos, on_delete=models.SET_NULL,
+	telefono = models.ForeignKey(Contacto, on_delete=models.SET_NULL,
         null=True, related_name="telefono")
 	email = models.EmailField()
 	sueldo = models.DecimalField(max_digits=10, decimal_places=2)

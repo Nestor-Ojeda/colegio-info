@@ -1,13 +1,13 @@
 from django.db import models
 from domicilio.models import Direccion
-from contactos.models import Contactos
+from contactos.models import Contacto
 from personas.models import Persona
 # Create your models here.
 class TutorA(models.Model):
 	parentesco = models.CharField(max_length = 100)
 	persona = models.ForeignKey(Persona, on_delete=models.SET_NULL,
         null=True, related_name="pers1")
-	telefono = models.ForeignKey(Contactos, on_delete=models.SET_NULL,
+	telefono = models.ForeignKey(Contacto, on_delete=models.SET_NULL,
         null=True, related_name="telefono1")
 	email = models.EmailField()
 	domicilio = models.ForeignKey(Direccion, on_delete=models.SET_NULL, null=True)
@@ -20,7 +20,7 @@ class TutorB(models.Model):
 	parentesco = models.CharField(max_length = 100)
 	persona = models.ForeignKey(Persona, on_delete=models.SET_NULL,
         null=True, related_name="pers2")
-	telefono = models.ForeignKey(Contactos, on_delete=models.SET_NULL,
+	telefono = models.ForeignKey(Contacto, on_delete=models.SET_NULL,
         null=True, related_name="telefono2")
 	email = models.EmailField()
 	domicilio = models.ForeignKey(Direccion, on_delete=models.SET_NULL, null=True)
@@ -33,7 +33,7 @@ class Alumno(models.Model):
 	persona = models.ForeignKey(Persona, on_delete=models.SET_NULL,
         null=True, related_name="pers3")
 	nacimiento = models.DateField()
-	telefono = models.ForeignKey(Contactos, on_delete=models.SET_NULL,
+	telefono = models.ForeignKey(Contacto, on_delete=models.SET_NULL,
         null=True, related_name="telefono3")
 	email = models.EmailField()
 	domicilio = models.ForeignKey(Direccion, on_delete=models.SET_NULL, null=True)
