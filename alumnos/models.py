@@ -42,4 +42,4 @@ class Alumno(models.Model):
 
 	def __str__(self):
 		tex = "{0}-{1}-{2}-{3}-{4}-{5}-{6}"
-		return tex.format(persona, self.nacimiento, self.telefono, self.email, self.domicilio, self.tutor_a, self.tutor_b)
+		return tex.format(self.persona, self.nacimiento, self.telefono, self.email, self.domicilio, self.tutor_a, self.tutor_b)
